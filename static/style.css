@@ -219,3 +219,89 @@ body {
     font-size: 16px;
     margin: 5px 0 0 0;
 }
+/* --- Фильтр таблиц --- */
+.filter-input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    background-color: #252525;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filter-input:focus {
+    border-color: var(--accent);
+}
+
+/* --- Форма заявки на ремонт --- */
+.repair-form {
+    background-color: #252525;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent);
+    max-width: 700px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    letter-spacing: 0.5px;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #1e1e1e;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+#formMessage {
+    margin-top: 14px;
+    font-size: 15px;
+    font-weight: 500;
+}

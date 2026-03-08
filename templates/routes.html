@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Автобаза | Рейсы</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/filter.js" defer></script>
 </head>
 <body>
     <div class="layout-grid">
@@ -26,8 +27,9 @@
 
         <main class="main-content">
             <h2 class="page-title">Текущие рейсы</h2>
-            <table class="main-table">
-                <tr>
+            <input type="text" id="routesFilter" class="filter-input" placeholder="🔍 Поиск по таблице..." onkeyup="filterTable('routesFilter', 'routesTable')">
+            <table class="main-table" id="routesTable">
+                <tr class="table-header">
                     <th>Машина</th>
                     <th>Маршрут</th>
                     <th>Груз</th>

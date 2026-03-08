@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Автобаза | Запчасти</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/filter.js" defer></script>
 </head>
 <body>
     <div class="layout-grid">
@@ -26,8 +27,9 @@
 
         <main class="main-content">
             <h2 class="page-title">Склад запчастей</h2>
-            <table class="main-table">
-                <tr>
+            <input type="text" id="zapchFilter" class="filter-input" placeholder="🔍 Поиск по таблице..." onkeyup="filterTable('zapchFilter', 'zapchTable')">
+            <table class="main-table" id="zapchTable">
+                <tr class="table-header">
                     <th>Наименование детали</th>
                     <th>Артикул</th>
                     <th>Количество</th>

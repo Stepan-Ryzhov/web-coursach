@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="/static/map.js" defer></script>
+    <script src="/static/filter.js" defer></script>
 </head>
 <body>
     <div class="layout-grid">
@@ -28,8 +29,9 @@
 
         <main class="main-content">
             <h2 class="page-title">Автомобили</h2>
-            <table class="main-table">
-                <tr>
+            <input type="text" id="carsFilter" class="filter-input" placeholder="🔍 Поиск по таблице..." onkeyup="filterTable('carsFilter', 'carsTable')">
+            <table class="main-table" id="carsTable">
+                <tr class="table-header">
                     <th>Автомобиль</th>
                     <th>Номер</th>
                     <th>Статус</th>

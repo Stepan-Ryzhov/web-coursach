@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Автобаза | Ремонт</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/filter.js" defer></script>
+    <script src="/static/remont.js" defer></script>
 </head>
 <body>
     <div class="layout-grid">
@@ -26,8 +28,9 @@
 
         <main class="main-content">
             <h2 class="page-title">Журнал ремонта</h2>
-            <table class="main-table">
-                <tr>
+            <input type="text" id="remontFilter" class="filter-input" placeholder="🔍 Поиск по таблице..." onkeyup="filterTable('remontFilter', 'remontTable')">
+            <table class="main-table" id="remontTable">
+                <tr class="table-header">
                     <th>Автомобиль</th>
                     <th>Неисправность</th>
                     <th>Ответственный</th>
@@ -40,6 +43,40 @@
                     <td style="color: #ffaa00;">В работе</td>
                 </tr>
             </table>
+
+            <h2 class="page-title" style="margin-top: 50px;">Подать заявку на ремонт</h2>
+            <div class="repair-form">
+                <div class="form-group">
+                    <label>Автомобиль</label>
+                    <select id="repairCar">
+                        <option value="ЗИЛ-130 (А 007 АА 77)">ЗИЛ-130 (А 007 АА 77)</option>
+                        <option value="ЗИЛ-131 (В 011 ВВ 77)">ЗИЛ-131 (В 011 ВВ 77)</option>
+                        <option value="VOLVO (М 134 ВМ 77)">VOLVO (М 134 ВМ 77)</option>
+                        <option value="КАМАЗ (О 456 ОО 77)">КАМАЗ (О 456 ОО 77)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Описание неисправности</label>
+                    <textarea id="repairProblem" rows="4" placeholder="Опишите проблему подробно..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Приоритет</label>
+                    <select id="repairPriority">
+                        <option value="low">Низкий — плановое ТО</option>
+                        <option value="medium">Средний — требует внимания</option>
+                        <option value="high">Высокий — срочный ремонт</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ответственный механик</label>
+                    <select id="repairMechanic">
+                        <option value="Иванов С.">Иванов Сергей (Моторист)</option>
+                        <option value="Смирнов А.">Смирнов Алексей (Автоэлектрик)</option>
+                    </select>
+                </div>
+                <button class="submit-btn" onclick="submitRepair()">Отправить заявку</button>
+                <div id="formMessage"></div>
+            </div>
         </main>
 
         <aside class="sidebar-right">

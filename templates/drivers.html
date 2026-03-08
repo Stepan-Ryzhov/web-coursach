@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Автобаза | Водители</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/filter.js" defer></script>
 </head>
 <body>
     <div class="layout-grid">
@@ -26,8 +27,9 @@
 
         <main class="main-content">
             <h2 class="page-title">Водительский состав</h2>
-            <table class="main-table">
-                <tr>
+            <input type="text" id="driversFilter" class="filter-input" placeholder="🔍 Поиск по таблице..." onkeyup="filterTable('driversFilter', 'driversTable')">
+            <table class="main-table" id="driversTable">
+                <tr class="table-header">
                     <th>Автомобиль</th>
                     <th>Водитель</th>
                     <th>Статус</th>
