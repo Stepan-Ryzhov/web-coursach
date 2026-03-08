@@ -18,14 +18,9 @@ func main() {
 	}
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
-	
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl, _ := template.ParseFiles("templates/home.html")
-		tmpl.Execute(w, nil)
-	})
-
-	http.HandleFunc("/profile", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, _ := template.ParseFiles("templates/profile.html")
 		tmpl.Execute(w, nil)
 	})
 
