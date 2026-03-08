@@ -29,6 +29,31 @@ func main() {
 		tmpl.Execute(w, nil)
 	})
 
+	http.HandleFunc("/drivers.html", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/drivers.html")
+		tmpl.Execute(w, nil)
+	})
+
+	http.HandleFunc("/mans.html", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/mans.html")
+		tmpl.Execute(w, nil)
+	})
+
+	http.HandleFunc("/remont.html", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/remont.html")
+		tmpl.Execute(w, nil)
+	})
+
+	http.HandleFunc("/routes.html", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/routes.html")
+		tmpl.Execute(w, nil)
+	})
+
+	http.HandleFunc("/zapch.html", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/zapch.html")
+		tmpl.Execute(w, nil)
+	})
+
 	fmt.Println("Сервер запущен на порту " + port)
 	http.ListenAndServe(":"+port, nil)
 }
