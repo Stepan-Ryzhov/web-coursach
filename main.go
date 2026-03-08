@@ -24,6 +24,11 @@ func main() {
 		tmpl.Execute(w, nil)
 	})
 
+	http.HandleFunc("/cars.html", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/cars.html")
+		tmpl.Execute(w, nil)
+	})
+
 	fmt.Println("Сервер запущен на порту " + port)
 	http.ListenAndServe(":"+port, nil)
 }
