@@ -7,6 +7,10 @@ import (
 	"os"
 )
 
+var ProfilesList struct {
+	name string
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -14,7 +18,12 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, _ := template.ParseFiles("templates/index.html")
+		tmpl, _ := template.ParseFiles("templates/home.html")
+		tmpl.Execute(w, nil)
+	})
+
+	http.HandleFunc("/profile", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, _ := template.ParseFiles("templates/profile.html")
 		tmpl.Execute(w, nil)
 	})
 

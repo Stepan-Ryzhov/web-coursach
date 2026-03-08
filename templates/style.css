@@ -1,0 +1,221 @@
+/* style.css */
+
+/* --- Базовые переменные для приятных цветов --- */
+:root {
+    --bg-dark: #121212;         /* Мягкий черный фон */
+    --bg-panel: #1e1e1e;        /* Фон для панелей и колонок */
+    --accent: #ff4500;          /* Фирменный оранжевый (чуть мягче оригинала) */
+    --accent-hover: #cc3700;    /* Оранжевый при наведении */
+    --text-main: #f5f5f5;       /* Светлый текст для читаемости */
+    --text-muted: #aaaaaa;      /* Приглушенный текст */
+    --border-color: #333333;    /* Цвет разделителей */
+}
+
+/* --- Сброс стилей и базовые настройки --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+/* --- Главная сетка: Шапка, 3 колонки, Подвал --- */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px; /* Левая колонка, Центр, Правая колонка */
+    grid-template-rows: auto 1fr auto;      /* Шапка, Контент, Подвал */
+    min-height: 100vh;
+}
+
+/* --- Шапка (Header) --- */
+.site-header {
+    grid-column: 1 / -1; /* Растягиваем на все колонки */
+    align-items: center;
+    gap: 20px;
+    padding: 10px 30px;
+    background-color: #000000;
+    border-bottom: 4px solid var(--accent);
+}
+
+.site-title {
+    color: var(--accent);
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.sidebar-left {
+    background-color: var(--bg-panel);
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-button {
+    text-decoration: none;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.menu-button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* --- Центральная колонка (Основной контент) --- */
+.main-content {
+    padding: 30px;
+}
+
+.page-title {
+    color: var(--accent);
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* --- Правая колонка (Информеры) --- */
+.sidebar-right {
+    background-color: var(--bg-panel);
+    padding: 20px;
+    border-left: 1px solid var(--border-color);
+}
+
+.widget {
+    margin-bottom: 30px;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.widget h3 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+.widget p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* --- Подвал (Footer) --- */
+.site-footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 15px;
+    background-color: #000000;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Элементы контента (Таблицы, Новости) --- */
+.main-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 20px;
+    background-color: #252525;
+}
+
+.main-table th, .main-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: center;
+}
+
+.main-table th {
+    background-color: #333333;
+    color: var(--accent);
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-item {
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.news-item dt {
+    color: var(--accent);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-item dd {
+    margin-left: 0;
+    line-height: 1.6;
+}
+
+.news-pic {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: block;
+}
+
+.map-container iframe {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.mechanics-photos {
+    display: flex;
+    justify-content: center; /* Ставим по центру по горизонтали */
+    gap: 60px; /* Отступ между двумя фото */
+    margin-bottom: 40px; /* Отступ вниз до таблицы */
+}
+
+.mechanic-profile {
+    text-align: center; /* Центрируем текст ровно под фотографией */
+}
+
+.mechanic-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px; /* Небольшое скругление углов для аккуратности */
+    border: 3px solid var(--accent); /* Оставляем тонкую фирменную рамку */
+    margin-bottom: 15px;
+}
+
+.mechanic-name {
+    color: var(--text-main);
+    font-size: 22px;
+    margin: 0;
+}
+
+.mechanic-role {
+    color: var(--text-muted); /* Делаем должность не такой яркой */
+    font-size: 16px;
+    margin: 5px 0 0 0;
+}
