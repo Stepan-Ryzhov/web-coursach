@@ -1,17 +1,14 @@
-/* style.css */
 
-/* --- Базовые переменные для приятных цветов --- */
 :root {
-    --bg-dark: #121212;         /* Мягкий черный фон */
-    --bg-panel: #1e1e1e;        /* Фон для панелей и колонок */
-    --accent: #ff4500;          /* Фирменный оранжевый (чуть мягче оригинала) */
-    --accent-hover: #cc3700;    /* Оранжевый при наведении */
-    --text-main: #f5f5f5;       /* Светлый текст для читаемости */
-    --text-muted: #aaaaaa;      /* Приглушенный текст */
-    --border-color: #333333;    /* Цвет разделителей */
+    --bg-dark: #121212;         
+    --bg-panel: #1e1e1e;        
+    --accent: #ff4500;          
+    --accent-hover: #cc3700;   
+    --text-main: #f5f5f5;       
+    --text-muted: #aaaaaa;      
+    --border-color: #333333;    
 }
 
-/* --- Сброс стилей и базовые настройки --- */
 body {
     margin: 0;
     padding: 0;
@@ -20,17 +17,14 @@ body {
     font-family: "Segoe UI", "Inter", sans-serif;
 }
 
-/* --- Главная сетка: Шапка, 3 колонки, Подвал --- */
 .layout-grid {
     display: grid;
-    grid-template-columns: 250px 1fr 250px; /* Левая колонка, Центр, Правая колонка */
-    grid-template-rows: auto 1fr auto;      /* Шапка, Контент, Подвал */
+    grid-template-columns: 250px 1fr 250px; 
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
-/* --- Шапка (Header) --- */
 .site-header {
-    grid-column: 1 / -1; /* Растягиваем на все колонки */
     align-items: center;
     gap: 20px;
     padding: 10px 30px;
@@ -80,7 +74,6 @@ body {
     background-color: var(--accent-hover);
 }
 
-/* --- Центральная колонка (Основной контент) --- */
 .main-content {
     padding: 30px;
 }
@@ -94,7 +87,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- Правая колонка (Информеры) --- */
 .sidebar-right {
     background-color: var(--bg-panel);
     padding: 20px;
@@ -119,7 +111,6 @@ body {
     color: var(--text-muted);
 }
 
-/* --- Подвал (Footer) --- */
 .site-footer {
     grid-column: 1 / -1;
     text-align: center;
@@ -129,7 +120,6 @@ body {
     border-top: 1px solid var(--border-color);
 }
 
-/* --- Элементы контента (Таблицы, Новости) --- */
 .main-table {
     width: 100%;
     border-collapse: collapse;
@@ -190,21 +180,21 @@ body {
 
 .mechanics-photos {
     display: flex;
-    justify-content: center; /* Ставим по центру по горизонтали */
-    gap: 60px; /* Отступ между двумя фото */
-    margin-bottom: 40px; /* Отступ вниз до таблицы */
+    justify-content: center; 
+    gap: 60px; 
+    margin-bottom: 40px; 
 }
 
 .mechanic-profile {
-    text-align: center; /* Центрируем текст ровно под фотографией */
+    text-align: center; 
 }
 
 .mechanic-photo {
     width: 180px;
     height: 180px;
     object-fit: cover;
-    border-radius: 8px; /* Небольшое скругление углов для аккуратности */
-    border: 3px solid var(--accent); /* Оставляем тонкую фирменную рамку */
+    border-radius: 8px; 
+    border: 3px solid var(--accent);
     margin-bottom: 15px;
 }
 
@@ -215,11 +205,11 @@ body {
 }
 
 .mechanic-role {
-    color: var(--text-muted); /* Делаем должность не такой яркой */
+    color: var(--text-muted);
     font-size: 16px;
     margin: 5px 0 0 0;
 }
-/* --- Фильтр таблиц --- */
+
 .filter-input {
     width: 100%;
     padding: 10px 15px;
@@ -238,7 +228,6 @@ body {
     border-color: var(--accent);
 }
 
-/* --- Форма заявки на ремонт --- */
 .repair-form {
     background-color: #252525;
     padding: 25px;
