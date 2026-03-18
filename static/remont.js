@@ -11,6 +11,22 @@ function submitRepair() {
         return;
     }
 
+    // Сохраняем в localStorage (хранятся постоянно)
+    let locCount = parseInt(localStorage.getItem('repair_count') || '0') + 1;
+    localStorage.setItem('repair_count', locCount);
+    localStorage.setItem('car_' + locCount, car);
+    localStorage.setItem('problem_' + locCount, problem);
+    localStorage.setItem('priority_' + locCount, priority);
+    localStorage.setItem('mechanic_' + locCount, mechanic);
+
+    // Сохраняем в sessionStorage (хранятся до закрытия браузера)
+    let sesCount = parseInt(sessionStorage.getItem('repair_count') || '0') + 1;
+    sessionStorage.setItem('repair_count', sesCount);
+    sessionStorage.setItem('car_' + sesCount, car);
+    sessionStorage.setItem('problem_' + sesCount, problem);
+    sessionStorage.setItem('priority_' + sesCount, priority);
+    sessionStorage.setItem('mechanic_' + sesCount, mechanic);
+
     const data = { car, problem, priority, mechanic };
 
     fetch('/api/repair', {
@@ -24,22 +40,6 @@ function submitRepair() {
             msg.textContent = 'Заявка успешно отправлена!';
             msg.style.color = '#4caf50';
             document.getElementById('repairProblem').value = '';
-
-            //localStorage
-            let locCount = parseInt(localStorage.getItem('repair_count') || '0') + 1;
-            localStorage.setItem('repair_count', locCount);
-            localStorage.setItem('car_' + locCount, car);
-            localStorage.setItem('problem_' + locCount, problem);
-            localStorage.setItem('priority_' + locCount, priority);
-            localStorage.setItem('mechanic_' + locCount, mechanic);
-
-            //sessionStorage
-            let sesCount = parseInt(sessionStorage.getItem('repair_count') || '0') + 1;
-            sessionStorage.setItem('repair_count', sesCount);
-            sessionStorage.setItem('car_' + sesCount, car);
-            sessionStorage.setItem('problem_' + sesCount, problem);
-            sessionStorage.setItem('priority_' + sesCount, priority);
-            sessionStorage.setItem('mechanic_' + sesCount, mechanic);
         }
     })
     .catch(function() {
@@ -88,8 +88,8 @@ function showRequests() {
     }
 
     block.innerHTML =
-        buildTable(localStorage,   'Все заявки') +
-        buildTable(sessionStorage, 'Заявки текущей сессии');
+        buildTable(localStorage,   'Все заявки (Local Storage)') +
+        buildTable(sessionStorage, 'Заявки текущей сессии (Session Storage)');
 
     block.style.display = 'block';
 }
