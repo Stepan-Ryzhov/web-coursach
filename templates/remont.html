@@ -28,7 +28,7 @@
 
         <main class="main-content">
             <h2 class="page-title">Журнал ремонта</h2>
-            <input type="text" id="remontFilter" class="filter-input" placeholder="🔍 Поиск по таблице..." onkeyup="filterTable('remontFilter', 'remontTable')">
+            <input type="text" id="remontFilter" class="filter-input" placeholder="Поиск по таблице..." onkeyup="filterTable('remontFilter', 'remontTable')">
             <table class="main-table" id="remontTable">
                 <tr class="table-header">
                     <th>Автомобиль</th>
@@ -75,7 +75,9 @@
                     </select>
                 </div>
                 <button class="submit-btn" onclick="submitRepair()">Отправить заявку</button>
+                <button class="submit-btn" onclick="showRequests()" style="margin-left: 15px; background-color: #333;">Просмотр заявок</button>
                 <div id="formMessage"></div>
+                <div id="requestsBlock" style="display: none; margin-top: 25px;"></div>
             </div>
         </main>
 
